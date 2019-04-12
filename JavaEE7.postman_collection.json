@@ -1,0 +1,168 @@
+{
+	"info": {
+		"name": "JavaEE7",
+		"_postman_id": "91a22168-dc6d-2b9b-df5b-3fbd064ae8b9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/javaee-7.0/rest/applications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/javaee-7.0/rest/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"javaee-7.0",
+						"rest",
+						"applications"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/javaee-7.0/rest/applications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 3,\n\t\"name\": \"Timeclock\",\n\t\"description\" : \"Tracks work hours for employees\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/javaee-7.0/rest/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"javaee-7.0",
+						"rest",
+						"applications"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/javaee-7.0/rest/applications/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/javaee-7.0/rest/applications/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"javaee-7.0",
+						"rest",
+						"applications",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/javaee-7.0/rest/applications/1/Trackzilla",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/javaee-7.0/rest/applications/1/Trackzilla",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"javaee-7.0",
+						"rest",
+						"applications",
+						"1",
+						"Trackzilla"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/javaee-7.0/rest/applications",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 3,\n\t\"name\": \"ClockIn\",\n\t\"description\" : \"Tracks work hours for employees\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/javaee-7.0/rest/applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"javaee-7.0",
+						"rest",
+						"applications"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/javaee-7.0/rest/applications/3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/javaee-7.0/rest/applications/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"javaee-7.0",
+						"rest",
+						"applications",
+						"3"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

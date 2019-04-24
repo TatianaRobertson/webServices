@@ -37,7 +37,7 @@ public class ApplicationResource {
 
     @POST
     public Response addApplication(Application application){
-
+       System.out.println("Application.description="+application.getDescription());
         try {
             Statement statement = Database.getConnection().createStatement();
             statement.executeUpdate("INSERT INTO TZA_APPLICATION " +

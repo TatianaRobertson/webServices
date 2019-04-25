@@ -24,6 +24,12 @@
             <artifactId>resteasy-jackson2-provider</artifactId>
             <version>3.6.1.Final</version>
         </dependency> 
+        <!-- https://mvnrepository.com/artifact/org.apache.axis/axis -->
+		<dependency>
+		    <groupId>org.apache.axis</groupId>
+		    <artifactId>axis</artifactId>
+		    <version>1.4</version>
+		</dependency>
     </dependencies>
      <build>
     	<plugins>

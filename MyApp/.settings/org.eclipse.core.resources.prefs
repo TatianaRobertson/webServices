@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
-encoding//src/main/java/src/main/java/com/keysoft/soap/IUserService.java=UTF-8
+encoding//src/main/java/src/main/java/com/keysoft/soap/generated/IUserService.java=UTF-8
+encoding//src/main/java/src/main/java/com/keysoft/soap/generated/UserServiceSOAP.java=UTF-8

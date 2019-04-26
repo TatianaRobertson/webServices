@@ -24,7 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetUser_QNAME = new QName("http://soap.keysoft.com.java.main.src/", "getUser");
     private final static QName _GetAllResponse_QNAME = new QName("http://soap.keysoft.com.java.main.src/", "getAllResponse");
+    private final static QName _GetUserResponse_QNAME = new QName("http://soap.keysoft.com.java.main.src/", "getUserResponse");
     private final static QName _GetAll_QNAME = new QName("http://soap.keysoft.com.java.main.src/", "getAll");
 
     /**
@@ -32,6 +34,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetUserResponse }
+     * 
+     */
+    public GetUserResponse createGetUserResponse() {
+        return new GetUserResponse();
     }
 
     /**
@@ -51,12 +61,46 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetUser }
+     * 
+     */
+    public GetUser createGetUser() {
+        return new GetUser();
+    }
+
+    /**
+     * Create an instance of {@link User }
+     * 
+     */
+    public User createUser() {
+        return new User();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUser }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.keysoft.com.java.main.src/", name = "getUser")
+    public JAXBElement<GetUser> createGetUser(GetUser value) {
+        return new JAXBElement<GetUser>(_GetUser_QNAME, GetUser.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetAllResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.keysoft.com.java.main.src/", name = "getAllResponse")
     public JAXBElement<GetAllResponse> createGetAllResponse(GetAllResponse value) {
         return new JAXBElement<GetAllResponse>(_GetAllResponse_QNAME, GetAllResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.keysoft.com.java.main.src/", name = "getUserResponse")
+    public JAXBElement<GetUserResponse> createGetUserResponse(GetUserResponse value) {
+        return new JAXBElement<GetUserResponse>(_GetUserResponse_QNAME, GetUserResponse.class, null, value);
     }
 
     /**

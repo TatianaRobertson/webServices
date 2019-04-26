@@ -2,6 +2,7 @@
 package src.main.java.com.keysoft.soap.generated;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
@@ -21,6 +22,20 @@ import javax.xml.ws.ResponseWrapper;
 })
 public interface IUserService {
 
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns src.main.java.com.keysoft.soap.User
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getUser", targetNamespace = "http://soap.keysoft.com.java.main.src/", className = "src.main.java.com.keysoft.soap.generated.GetUser")
+    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://soap.keysoft.com.java.main.src/", className = "src.main.java.com.keysoft.soap.generated.GetUserResponse")
+    public User getUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 

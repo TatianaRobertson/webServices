@@ -1,4 +1,4 @@
-package src.main.java.com.keysoft.model;
+package restclient;
 
 public class Ticket {
 

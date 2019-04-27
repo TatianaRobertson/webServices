@@ -3,6 +3,8 @@ package src.main.java.com.keysoft.soap.generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -42,7 +44,21 @@ public class User {
     protected Integer id;
     protected String lastName;
 
-    /**
+ 
+
+	public User() {
+		super();
+	}
+
+	public User(String address, String firstName, Integer id, String lastName) {
+		super();
+		this.address = address;
+		this.firstName = firstName;
+		this.id = id;
+		this.lastName = lastName;
+	}
+
+	/**
      * Gets the value of the address property.
      * 
      * @return

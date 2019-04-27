@@ -6,54 +6,53 @@ import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import restclient.Ticket;
+import restclient.TicketSearch;
 import restclient.User;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
 
 public class RestClient {
-    public static void main(String[] args) throws Exception {
-        Client client = ClientBuilder.newClient();
+	public static void main(String[] args) throws Exception {
+		Client client = ClientBuilder.newClient();
+		TicketSearch ticketSearch = new TicketSearch();
 
-        //Return a single application
-        Future<User> user = client
-                .target("http://localhost:8080/javaee-7.0/rest/users/")
-                .path("{id}")
-                .resolveTemplate("id", 3)
-                .request()
-                .async()
-                .get(new InvocationCallback<User>(){
+		List<String> statusValues = new ArrayList<String>();
+		statusValues.add("'Open'");
+		statusValues.add("'In Process'");
+		ticketSearch.setStatusValues(statusValues);
+		ticketSearch.setDaysOpenFrom(10);
+		ticketSearch.setDaysOpenTo(50);
 
-					public void completed(User user) {
-						System.out.println("Application name returned: " + user.getFirstName());						
-					}
+		List<Ticket> tickets = client
+				.target("http://localhost:8080/javaee-7.0/rest/")
+				.path("tickets/search")
+				.request(MediaType.APPLICATION_JSON)
+				.post(Entity.entity(ticketSearch, "application/json"), new GenericType<List<Ticket>>() {
+				});
+		tickets.stream().forEach(
+				ticket -> System.out.println(ticket.getId() + "-" + ticket.getTitle() + "-" + ticket.getAssigneeId()));
 
-					public void failed(Throwable error) {
-						System.out.println("Failed ");						
-								// TODO Auto-generated method stub
-						
-					}
-                	
-                });
+		/*
+		 * //Return a single application Future<User> user = client
+		 * .target("http://localhost:8080/javaee-7.0/rest/users/") .path("{id}")
+		 * .resolveTemplate("id", 3) .request() .async() .get(new
+		 * InvocationCallback<User>(){
+		 * 
+		 * public void completed(User user) {
+		 * System.out.println("Application name returned: " +
+		 * user.getFirstName()); }
+		 * 
+		 * public void failed(Throwable error) { System.out.println("Failed ");
+		 * // TODO Auto-generated method stub
+		 * 
+		 * }
+		 * 
+		 * });
+		 */
 
-      
-        //Creating a new application; confirm record created in the database
- /*       client.target("http://localhost:8080/javaee-7.0/rest/users/")
-                .request()
-                .post(Entity.entity(new User(57, "Andrew",
-                                "Smith","23 Grenada road"), "application/json"),
-                        User.class);
-
-
-        System.out.println("user created created");
-*/
-        //Return a list of applications
-/*        List<User> users = client.target("http://localhost:8080/javaee-7.0/rest")
-                .path("users")
-                .request(MediaType.APPLICATION_JSON)
-                .get(new GenericType<List<User>>() {});
-        System.out.println("The count of applications returned: " + users.size());
-*/
-    }
+	}
 
 }

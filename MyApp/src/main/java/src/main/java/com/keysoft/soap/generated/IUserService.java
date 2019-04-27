@@ -39,6 +39,48 @@ public interface IUserService {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addUser", targetNamespace = "http://soap.keysoft.com.java.main.src/", className = "src.main.java.com.keysoft.soap.generated.AddUser")
+    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://soap.keysoft.com.java.main.src/", className = "src.main.java.com.keysoft.soap.generated.AddUserResponse")
+    public boolean addUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        User arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "updateUser", targetNamespace = "http://soap.keysoft.com.java.main.src/", className = "src.main.java.com.keysoft.soap.generated.UpdateUser")
+    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "http://soap.keysoft.com.java.main.src/", className = "src.main.java.com.keysoft.soap.generated.UpdateUserResponse")
+    public boolean updateUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        User arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteUser", targetNamespace = "http://soap.keysoft.com.java.main.src/", className = "src.main.java.com.keysoft.soap.generated.DeleteUser")
+    @ResponseWrapper(localName = "deleteUserResponse", targetNamespace = "http://soap.keysoft.com.java.main.src/", className = "src.main.java.com.keysoft.soap.generated.DeleteUserResponse")
+    public boolean deleteUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
      * @return
      *     returns java.lang.String
      */

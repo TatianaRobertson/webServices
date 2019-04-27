@@ -14,4 +14,16 @@ public interface IUserService {
 	@WebMethod
     public String getAll();
 
+	@WebMethod
+	public User getUser(int id);
+	
+	@WebMethod
+	public boolean addUser(User user);
+	
+
+	@WebMethod
+	public boolean updateUser(User user);
+	
+	@WebMethod
+	public boolean deleteUser(int id);
 }

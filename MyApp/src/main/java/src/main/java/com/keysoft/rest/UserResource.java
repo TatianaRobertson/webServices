@@ -1,6 +1,7 @@
 package src.main.java.com.keysoft.rest;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -25,21 +26,11 @@ import src.main.java.com.keysoft.utils.Database;
 public class UserResource {
 
         @POST
-	    public Response addUser(User user){
-	       System.out.println("user.firstname="+user.getFirstName());
-	        try {
+	    public Response addUser(User user) throws SQLException {
 	            Statement statement = Database.getConnection().createStatement();
 	            statement.executeUpdate("INSERT INTO TZA_USER " +
 	                    " VALUES (" + user.getId() + ",'" + user.getFirstName() +
 	                    "','" + user.getLastName()+ "','"+user.getAddress()+"')");
-	        } catch (SQLIntegrityConstraintViolationException exception) {
-	            exception.printStackTrace();
-	            return Response.status(409).build();
-	        } catch (Exception exception) {
-	            exception.printStackTrace();
-	            return Response.status(403).build();
-	        }
-
 	        return Response.status(201).build();
 	    }
 
